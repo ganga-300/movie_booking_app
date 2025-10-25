@@ -15,5 +15,10 @@ body{
     background-color: #09090B;
 } 
 
+@theme{
+    --color-primary : #f84565;
+    --color-primary-dull : #D63854;
+}
+
 
 
