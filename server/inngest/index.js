@@ -1,5 +1,7 @@
-import { User } from "@clerk/express";
+// import { User } from "@clerk/express";
 import { Inngest } from "inngest";
+import User from "../models/User.js";
+
 
 // Create a client to send and receive events
 export const inngest = new Inngest({ id: "movie-ticket-booking" });
