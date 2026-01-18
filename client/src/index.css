@@ -1,37 +1,31 @@
- @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
 
-
-
-*{
-     font-family: "Outfit", sans-serif;
-     scrollbar-width: thin;
-     scrollbar-color: #787777 #1e1e1e;
+@theme {
+  --color-primary: #f84565;
+  --color-primary-dull: #d63854;
 }
 
-body{
-    color: white;
-    background-color: #09090B;
-} 
-
-@theme{
-    --color-primary : #f84565;
-    --color-primary-dull : #D63854;
+* {
+  font-family: "Outfit", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #787777 #1e1e1e;
 }
 
-.no-scrollbar{
-    scrollbar-width: none;
+body {
+  color: white;
+  background-color: #09090b;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
 }
 
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button{
-    -webkit-appearance:none,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
-::-webkit-calendar-picker-indicator{
-    filter:invert(1);
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
-
-
-
