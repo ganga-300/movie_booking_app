@@ -91,6 +91,9 @@ const releaseSeatsAndDeleteBooking = inngest.createFunction(
   }
 );
 
+// inngest function to cancel booking and release seats of show  after 10 minutes when booking created but oayment is not made
+
+
 // Create an empty array where we'll export future Inngest functions
 export const functions = [
   syncUserCreation,
