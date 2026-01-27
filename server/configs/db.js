@@ -1,24 +1,17 @@
-import mongoose from 'mongoose';
-
-let isConnected = false; // Track connection across requests
+import mongoose from "mongoose";
 
 const connectDB = async () => {
-  if (isConnected) {
-    console.log('✅ Using existing database connection');
-    return;
+  if (!process.env.MONGODB_URI) {
+    console.error("FATAL: MONGODB_URI environment variable is not defined");
+    process.exit(1);
   }
 
   try {
-    await mongoose.connect(`${process.env.MONGODB_URI}/QuickShow`, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-
-    isConnected = true;
-    console.log('✅ Database Connected');
+    await mongoose.connect(`${process.env.MONGODB_URI}/QuickShow`);
+    console.log("Database Connected Successfully!");
   } catch (error) {
-    console.error('❌ DB connection error:', error.message);
-    throw error;
+    console.error("FATAL: Database connection failed:", error.message);
+    process.exit(1);
   }
 };
 

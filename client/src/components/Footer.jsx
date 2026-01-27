@@ -1,52 +1,87 @@
-import React from 'react'
-import { assets } from '../assets/assets'
-import appStore from '../assets/appStore.svg';
+import { Link } from "react-router-dom";
+import { assets } from "../assets/assets";
 
 const Footer = () => {
   return (
-      <footer class="px-6 md:px-16 lg:px-24 xl:px-32 pt-8 mt-40  w-full text-gray-500">
-    <div class="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500/30 pb-14">
-        <div class="md:max-w-96">
-            <img className='w-36 h-auto' alt='logo'/>
-            <p class="mt-6 text-sm">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-
-            <div className='flex items-center gap-2 mt-4'>
-              <img src="" alt='google play' className='h-9 w-auto '/>
-              <img/>
-              <img src={appStore} alt='app store' className='h-9 w-auto '/>
-              <img/>
-            </div>
-
+    <footer className="px-6 md:px-16 lg:px-36 mt-40 w-full text-gray-300">
+      <div className="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500 pb-14">
+        <div className="md:max-w-96">
+          <img alt="QuickShow Logo" className="h-11" src={assets.logo} />
+          <p className="mt-6 text-sm">
+            QuickShow is your one-stop destination for booking movie tickets,
+            discovering the latest releases, and exploring theaters near you.
+            Enjoy a seamless and fast movie booking experience, exclusive
+            offers, and more!
+          </p>
+          <div className="flex items-center gap-2 mt-4">
+            <img
+              src={assets.googlePlay}
+              alt="Get it on Google Play"
+              className="h-9 w-auto"
+            />
+            <img
+              src={assets.appStore}
+              alt="Download on the App Store"
+              className="h-9 w-auto"
+            />
+          </div>
         </div>
-        <div class="flex-1 flex items-start md:justify-end gap-20">
-            <div>
-                <h2 class="font-semibold mb-5 text-gray-800">Company</h2>
-                <ul class="text-sm space-y-2">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Contact us</a></li>
-                    <li><a href="#">Privacy policy</a></li>
-                </ul>
+        <div className="flex-1 flex items-start md:justify-end gap-20 md:gap-40">
+          <div>
+            <h2 className="font-semibold mb-5">Quick Links</h2>
+
+            <ul className="text-sm space-y-2">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/movies">Movies</Link>
+              </li>
+              <li>
+                <Link to="/theaters">Theaters</Link>
+              </li>
+              <li>
+                <Link to="/favourite">Favourites</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="font-semibold mb-5">Contact Us</h2>
+            <div className="text-sm space-y-2">
+              <p>
+                Support:{" "}
+                <a href="mailto:support@quickshow.com" className="underline">
+                  support@quickshow.com
+                </a>
+              </p>
+              <p>
+                Business:{" "}
+                <a href="mailto:business@quickshow.com" className="underline">
+                  business@quickshow.com
+                </a>
+              </p>
+              <p>Phone: +1-800-123-4567</p>
             </div>
-            <div>
-                <h2 class="font-semibold mb-5 text-gray-800">Get in touch</h2>
-                <div class="text-sm space-y-2">
-                    <p>+1-212-456-7890</p>
-                    <p>contact@example.com</p>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
-    <p class="pt-4 text-center text-xs md:text-sm pb-5">
-        Copyright 2024 © <a href="https://prebuiltui.com">QuickShow</a>. All Right Reserved.
-    </p>
-</footer>
+      </div>
+      <p className="pt-4 text-center text-sm pb-5">
+        &copy; {new Date().getFullYear()} QuickShow. Made with ❤️ by{" "}
+        <a
+          href="https://github.com/Itssanthoshhere"
+          className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Itssanthoshhere
+        </a>
+        . All rights reserved.
+      </p>
+    </footer>
+  );
+};
 
-  )
-}
-
-export default Footer
+export default Footer;
